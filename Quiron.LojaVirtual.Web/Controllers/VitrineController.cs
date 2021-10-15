@@ -11,7 +11,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
     public class VitrineController : Controller
     {
         private ProdutosRepositorio _repositorio;
-        public int produtosPorPagina = 3;
+        public int produtosPorPagina = 10;
         // GET: Vitrine
         public ActionResult ListaProdutos(int pagina = 1)
         {
@@ -24,7 +24,8 @@ namespace Quiron.LojaVirtual.Web.Controllers
                 Paginacao = new Paginacao
                 {
                     PaginaAtual = pagina,
-                    ItensPorPagina = produtosPorPagina
+                    ItensPorPagina = produtosPorPagina,
+                    ItensTotal = _repositorio.Produtos.Count()
                 }
             };
 

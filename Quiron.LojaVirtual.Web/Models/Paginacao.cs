@@ -10,12 +10,12 @@ namespace Quiron.LojaVirtual.Web.Models
 
         public int PaginaAtual { get; set; }
 
-        public int TotalDePaginas
+        public int TotalDePagina
         {
             get
             {
                 return (int)Math.Ceiling((decimal)ItensTotal / ItensPorPagina);
-            } 
+            }
         }
     }
 }
